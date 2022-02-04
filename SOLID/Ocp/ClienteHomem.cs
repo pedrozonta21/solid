@@ -2,6 +2,6 @@
 {
     public class ClienteHomem : SaudacaoAbstract
     {
-        public override string EscreverSaudacao() => "E aí? Beleza?";
+        public override string RetornarSaudacao() => "E aí? Beleza?";
     }
 }

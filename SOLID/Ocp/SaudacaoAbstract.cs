@@ -2,6 +2,6 @@
 {
     public abstract class SaudacaoAbstract
     {
-        public abstract string EscreverSaudacao();
+        public abstract string RetornarSaudacao();
     }
 }

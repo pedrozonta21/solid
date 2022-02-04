@@ -2,6 +2,6 @@
 {
     public class Cliente : SaudacaoAbstract
     {
-        public override string EscreverSaudacao() => "Oi";
+        public override string RetornarSaudacao() => "Oi";
     }
 }
