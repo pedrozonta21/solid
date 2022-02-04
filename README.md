@@ -1,12 +1,13 @@
 SOLID
 =====
-## Princípio da Responsabilidade Única (SRP)
+
+### *Princípio da Responsabilidade Única (SRP)*
 Separar principalmente a regra de negócio do das regras de persistência, pois elas mudam por motivos muitas vezes diferentes.
 
 * Uma classe deve ter uma única responsabilidade, com isso, ela só deve ter uma razão para ser alterada.
 * Nesse exemplo do livro, embora as responsabilidades estajam em uma única classe (Modem), duas dependências foram retiradas, com isso ninguém vai se tornar dependente da classe Modem.
-
-## Princípio do Aberto/Fechado (OCP)
+* 
+### *Princípio do Aberto/Fechado (OCP)*
 Uma classe, à medida que os requisitos aumentam deve estar aberta para ampliação e fechada para modificação. É meio confuso pensa nisso em um primeiro momento, já que se algo vai ser ampliado, vai ter que se mexer no código.
 
 A aplicação desse princípio consiste em:
