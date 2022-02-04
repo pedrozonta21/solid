@@ -2,6 +2,6 @@
 {
     public abstract class SaudacaoAbstract
     {
-        public virtual string EscreverSaudacao() => "Oi";
+        public abstract string EscreverSaudacao();
     }
 }

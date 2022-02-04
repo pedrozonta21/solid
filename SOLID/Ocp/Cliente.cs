@@ -2,6 +2,6 @@
 {
     public class Cliente : SaudacaoAbstract
     {
-        public override string EscreverSaudacao() => base.EscreverSaudacao();
+        public override string EscreverSaudacao() => "Oi";
     }
 }
