@@ -12,7 +12,7 @@ Uma classe, à medida que os requisitos aumentam deve estar aberta para ampliaç
 
 A aplicação desse princípio consiste em:
 * A classe abstrata inicial tem sua implementação padrão (ou não).
-* Conforme outras classes precisem de um comportamento diferente, ela implementam e dá um override, assim o código fonte raiz permanece intacto.
+* Conforme outras classes precisem de seu comportamento específico, elas implementam e dão um override.
 * Isso evita ficar criando if's, pois como desmonstrado no exemplo, caso apareça um novo tipo de cliente, basta criar uma classe pra ele (o que condiz com o SRP).
 * Caso a saudação de um determinado cliente mude, as outras continuarão intactas.
 
