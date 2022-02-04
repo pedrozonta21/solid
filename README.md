@@ -1,5 +1,5 @@
-# Seguindo o livro Princípios, Padrões e Práticas Ágeis em C#
-
+SOLID
+=====
 ## Princípio da Responsabilidade Única (SRP)
 Separar principalmente a regra de negócio do das regras de persistência, pois elas mudam por motivos muitas vezes diferentes.
 
@@ -15,6 +15,6 @@ A aplicação desse princípio consiste em:
 * Isso evita ficar criando if's, pois como desmonstrado no exemplo, caso apareça um novo tipo de cliente, basta criar uma classe pra ele (o que condiz com o SRP).
 * Caso a saudação de um determinado cliente mude, as outras continuarão intactas.
 
-Em um exemplo pequeno como esse no link por exemplo, pode parecer inofensivo adicionar apenas mais um if, porém os requisitos sempre mudam, e ficar mexendo em um método acoplado com certeza vai ocasionar um código feio e muito frágil futuramente.
+> Em um exemplo pequeno como esse no link por exemplo, pode parecer inofensivo adicionar apenas mais um if, porém os requisitos sempre mudam, e ficar mexendo em um método acoplado com certeza vai ocasionar um código feio e muito frágil futuramente.
 
 Mesclei esse exemplo https://medium.com/@tbaragao/solid-ocp-open-closed-principle-600be0382244 com o do livro.
