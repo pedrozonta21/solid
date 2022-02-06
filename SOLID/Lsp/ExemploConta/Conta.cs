@@ -2,7 +2,7 @@
 {
     public abstract class Conta
     {
-        public decimal ValorEmConta { get; set; }
+        public decimal ValorEmConta { get; protected set; }
 
         public virtual void RetirarDinheiro(decimal valor) => ValorEmConta -= valor;
 
