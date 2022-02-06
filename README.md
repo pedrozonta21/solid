@@ -1,4 +1,4 @@
-SOLID
+Princípios, Padrões e Práticas Ágeis em C# - SOLID
 =====
 
 ### *Princípio da Responsabilidade Única (SRP)*
