@@ -1,4 +1,4 @@
-﻿namespace SOLID.Ocp
+﻿namespace SOLID.Ocp.ExemploSaudacaoCliente
 {
     public class ClienteMulher : SaudacaoAbstract
     {
