@@ -16,6 +16,12 @@ A aplicação desse princípio consiste em:
 * Isso evita ficar criando if's, pois como desmonstrado no exemplo, caso apareça um novo tipo de cliente, basta criar uma classe pra ele (o que condiz com o SRP).
 * Caso a saudação de um determinado cliente mude, as outras continuarão intactas.
 
-> Em um exemplo pequeno como esse no link por exemplo, pode parecer inofensivo adicionar apenas mais um if, porém os requisitos sempre mudam, e ficar mexendo em um método acoplado com certeza vai ocasionar um código feio e muito frágil futuramente.
+Em um exemplo pequeno como esse no link por exemplo, pode parecer inofensivo adicionar apenas mais um if, porém os requisitos sempre mudam, e ficar mexendo em um método acoplado com certeza vai ocasionar um código feio e muito frágil futuramente.
 
 Mesclei esse exemplo https://medium.com/@tbaragao/solid-ocp-open-closed-principle-600be0382244 com o do livro.
+
+Um outro exemplo do livro foi o famoso projeto Shape. Inicialmente, a ideia é a mesma do exemplo acima, porém no livro o exemplo foi além, onde foi imaginado uma situação onde fosse necessário fazer uma alteração na hora de listar todas as formas (desenhar primeiro os círculos).
+
+Então a funcionalidade de ordenar os círculos primeiro, sem mexer diretamente no método DesenharFormas(), foi extraída para uma classe que herda IComparer, para caso novas formas sejam adicionadas juntamente com suas prioriades, a alteração será feita na classe ComparadorDeForma.
+
+> Não existe para nenhum cenário um fechamento completo, onde tudo pode ser abstrato, então a abstração deve ser feita de forma estratégica, visando sempre quais e onde serão as alterações mais prováveis.
