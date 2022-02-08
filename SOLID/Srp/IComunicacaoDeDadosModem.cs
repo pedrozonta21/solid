@@ -2,7 +2,7 @@
 {
     public interface IComunicacaoDeDadosModem
     {
-        public void EnviarComunicacao(string comunicacao);
-        public char ReceberComunicacao();
+        void EnviarComunicacao(string comunicacao);
+        char ReceberComunicacao();
     }
 }

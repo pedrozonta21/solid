@@ -2,7 +2,7 @@
 {
     public interface IConexaoModem
     {
-        public void DiscarConexao(string pno);
-        public void DesligarConexao();
+        void DiscarConexao(string pno);
+        void DesligarConexao();
     }
 }
