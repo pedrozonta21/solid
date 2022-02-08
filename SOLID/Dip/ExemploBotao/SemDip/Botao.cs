@@ -1,13 +1,32 @@
-﻿namespace SOLID.Dip.ExemploBotao.SemDip
+﻿using System;
+
+namespace SOLID.Dip.ExemploBotao.SemDip
 {
     public class Botao
     {
         private readonly Lampada _lampada;
+        private readonly Computador _computador;
 
-        public Botao(Lampada lampada) => _lampada = lampada;
+        public Botao(Lampada lampada, Computador computador)
+        {
+            _lampada = lampada;
+            _computador = computador;
+        }
 
-        public void LigarObjeto() => _lampada.Ligar();
+        public void LigarObjeto(Type tipoObjeto)
+        {
+            if(typeof(Lampada) == tipoObjeto)
+                _lampada.Ligar();
+            else if(typeof(Computador) == tipoObjeto)
+                _computador.Ligar();
+        }
 
-        public void DesligarObjeto() => _lampada.Desligar();
+        public void DesligarObjeto(Type tipoObjeto)
+        {
+            if (typeof(Lampada) == tipoObjeto)
+                _lampada.Desligar();
+            else if (typeof(Computador) == tipoObjeto)
+                _computador.Desligar();
+        }
     }
 }
