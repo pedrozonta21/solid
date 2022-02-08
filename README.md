@@ -46,3 +46,15 @@ A ContaPoupanca entrega um comportamento diferente, pois se fizermos uma retirad
 Se duas classes filhas possuem resultados diferentes nas implementações, o princípio é violado.
 Precisamos ter muita atenção, pois o LSP demanda muita análise. Como dito por Robert C. Martin, o conceito de É UM para se ter uma implemenção, é muito amplo para ser uma decisão fácil. Como mostrado no exemplo, embora ContaPoupanca teoricamento É UMA Conta, na prática a implementação está errada por ter um resultado diferente do esperado. 
 Obviamente, a classe ContaPoupanca poderia implementar o método RetirarDinheiro() fazendo um cálculo diferente por qualquer motivo que seja, porém o __resultado__ deve ser o mesmo esperado em sua classe pai (Conta).
+
+### *Princípio da Inversão de Dependência (DIP)*
+A ideia desse princípio ajuda muito no reaproveitamento de código. Quando se tem uma classe de alto nível, isto é, uma classe mestre que faz ações muito importantes dentro do sistema, normalmente usamos outras classes de nível menor para fazer ações mais detalhadas, como realizar um cálculo, validar um texto, etc. Essa classe mestre não pode ser frágil ao se fazer uma alteração nos níveis mais baixos.
+
+No exemplo do livro de Robert C. Maritin, temos uma classe Botao, que é a classe mestre (afinal, muitas coisas possuem botões de ligar / desligar). E temos a classe de um nível mais baixo, a Lampada. Até aí tudo funcionando perfeitamente.
+Só que agora, surgiu a classe Computador, que também possui um botão liga / desliga. Ora, é só usarmos a classe Botao que já controle isso, a classe Computador faz o seu método de ligar, enquanto Botao apenas chama.
+
+Mas neste caso, se formos reutilizar a classe Botao, teremos que criar mais um parâmetro no construtor, e colocar um parâmetro nos métodos para sabermos qual o objeto que estamos apertando o botão, e assim fazer um if.
+
+É a partir de agora que surge o problema, pois para cada novo objeto, teremos que criar uma variável de instância, um parâmetro no construtor e um if nos dois métodos existentes na classe. Isso se torna inviável, porque caso formos usar a classe Botao, temos que injetar todos os objetos (Lampada e Computador), e com certeza em cada contexto da classe mestre, só precisaremos de um desses objetos.
+
+> Isso viola o OCP, já que a classe não está fechada para alteração, e uma mudança lá embaixo ocasiona mudanças em cascata.
