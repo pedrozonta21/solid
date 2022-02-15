@@ -81,6 +81,6 @@ No exemplo com ISP, resolvemos esse problema, criando uma interface para cada co
 - Todo objeto eletrônico liga e desliga.
 - Todo telefone disca e toca.
 
-Assim, tiramos métodos inúteis das classes, deixando apenas os que importam, usando herança múltipla. Por exemplo, na classe __TelefoneModerno__, identificamos que ela é um objeto eletrônico, um telefone padrão e um telefone moderno, já que essa classe possui todos os comportamentos, diferente de __TelefoneCelular___.
+Assim, tiramos métodos inúteis das classes, deixando apenas os que importam, usando herança múltipla. Por exemplo, na classe __TelefoneModerno__, identificamos que ela é um objeto eletrônico, um telefone padrão e um telefone moderno, já que essa classe possui todos os comportamentos, diferente de __TelefoneCelular__.
 
 Se fôssemos adicionar mais uma classe (__Lampada__) por exemplo, sem o ISP ela teria um método TirarFoto(), que não faz o menor sentido para uma lâmpada. Com o ISP, essa classe implementaria apenas a interface que lhe diz respeito, que é a _IObjetoEletrônico_.
