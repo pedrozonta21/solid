@@ -4,7 +4,7 @@
     {
         public decimal ValorEmConta { get; protected set; }
 
-        public virtual void RetirarDinheiro(decimal valor) => ValorEmConta -= valor;
+        public abstract void RetirarDinheiro(decimal valor);
 
         public decimal RetornarQuantoDinheiroPossuiNaConta() => ValorEmConta;
     }
