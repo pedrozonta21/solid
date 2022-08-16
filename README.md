@@ -38,16 +38,16 @@ Dois fatores bem importantes devem ser avaliados para aplicar o LSP:
 2. O comportamento externo é alterado se substituímos a classe base pela derivada?
 
 Se uma dessas duas perguntas tiver uma resposta positiva, o LSP não está sendo respeitado. No exemplo, vamos imaginar o seguinte cenário:
-- Toda _Conta_ tem a opção de RetirarDinheiro() (seja em saque ou pagamento), e essa conta pode ficar negativada, isto é, pode haver uma retirada de dinheiro maior do que o disponível. 
-- A classe __ContaCorrente__ se encaixa nesse quesito, além de ter, é claro, seu método próprio de cartão de crédito.
-- A classe __ContaPoupanca___, a princípio se encaixa, já que ela também possui retirada de dinheiro. Porém a ela não pode ficar com saldo negativo, então não é possível fazer uma retirada de dinheiro maior do que o disponível.
+- Toda _Conta_ tem a opção de RetirarDinheiro() (seja em saque ou pagamento).
+- A classe __ContaCorrente__ se encaixa nesse quesito, pois é feita uma operação em cima do saldo.
+- A classe __ContaPoupanca___, também trabalha em cima do saldo, porém com uma regra para efetuar o saque.
+- A classe __ContaFake__, criada para o exemplo, não pode ser uma substituta de sua classe base, pois acontece um comportamente inesperado: Uma execeção. Não é feita nenhuma implementação de retirada de dinheiro de lugar nenhum.
 
-Em um primeiro momento, tudo parece estar lindo. Agora, para saber se o LSP está sendo respeitado, basta responder a pergunta número 2 acima. A resposta é sim! Pois em todo segmento de conta que É UMA CONTA (herança), deve-se esperar poder ficar com um saldo negativo, sendo assim, não importa se seja __ContaCorrente__, __ContaSeiLaOQue__, elas sempre vão ter o comportamento esperado de poderem ficar negativadas.
-A __ContaPoupanca__ entrega um comportamento diferente, pois se fizermos uma retirada de R$100, tendo um saldo de R$50, o método RetornarQuantoDinheiroPossuiNaConta() retornará R$100, e não R$-50 como é esperado.
+Esse exemplo de *NotImplementedException();* é para deixar explícito que o comportamento é totalmente diferente, mas em exemplos reais, pode ser representado em métodos que retornam um tipo diferente do esperado.
 
 Se duas classes filhas possuem resultados diferentes nas implementações, o princípio é violado.
-Precisamos ter muita atenção, pois o LSP demanda muita análise. Como dito por Robert C. Martin, o conceito de É UM para se ter uma implemenção, é muito amplo para ser uma decisão fácil. Como mostrado no exemplo, embora ContaPoupanca teoricamento É UMA _Conta_, na prática a implementação está errada por ter um resultado diferente do esperado. 
-Obviamente, a classe ContaPoupanca poderia implementar o método RetirarDinheiro() fazendo um cálculo diferente por qualquer motivo que seja, porém o __resultado__ deve ser o mesmo esperado em sua classe pai (_Conta_).
+Precisamos ter muita atenção, pois o LSP demanda muita análise. Como dito por Robert C. Martin, o conceito de É UM para se ter uma implemenção, é muito amplo para ser uma decisão fácil. Como mostrado no exemplo, embora _ContaFake_ teoricamento É UMA _Conta_, na prática a implementação está errada por ter um resultado diferente do esperado. 
+Obviamente, a classe _ContaFake_ poderia implementar o método RetirarDinheiro() fazendo um cálculo ou retirada diferente por qualquer motivos específicos do contexto daquela classe, porém o __resultado__ deve ser o mesmo esperado em sua classe pai (_Conta_).
 
 ### *Princípio da Inversão de Dependência (DIP)*
 A ideia desse princípio ajuda muito no reaproveitamento de código. Quando se tem uma classe de alto nível, isto é, uma classe mestre que faz ações muito importantes dentro do sistema, normalmente usamos outras classes de nível menor para fazer ações mais detalhadas, como realizar um cálculo, validar um texto, etc. Essa classe mestre não pode ser frágil ao se fazer uma alteração nos níveis mais baixos.
