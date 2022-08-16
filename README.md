@@ -7,6 +7,8 @@ Separar principalmente a regra de negócio das regras de persistência, pois ela
 * Uma classe deve ter uma única responsabilidade, com isso, ela só deve ter uma razão para ser alterada.
 * Nesse exemplo do livro, embora as responsabilidades estejam em uma única classe (Modem), duas dependências foram retiradas, com isso ninguém vai se tornar dependente da classe Modem.
 
+Ou seja, se uma classe pode necessitar de alteração por via de mais de um contexto, a separação deve ser feita. Não faz sentido por exemplo, uma classe precisar ser alterada por uma mudança na regra de um documento fiscal e por uma mudança no banco de dados.
+
 ### *Princípio do Aberto/Fechado (OCP)*
 Uma classe, à medida que os requisitos aumentam deve estar aberta para ampliação e fechada para modificação. É meio confuso pensar nisso em um primeiro momento, já que se algo vai ser ampliado, vai ter que se mexer no código.
 
