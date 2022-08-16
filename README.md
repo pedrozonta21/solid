@@ -40,7 +40,7 @@ Dois fatores bem importantes devem ser avaliados para aplicar o LSP:
 Se uma dessas duas perguntas tiver uma resposta positiva, o LSP não está sendo respeitado. No exemplo, vamos imaginar o seguinte cenário:
 - Toda _Conta_ tem a opção de RetirarDinheiro() (seja em saque ou pagamento).
 - A classe __ContaCorrente__ se encaixa nesse quesito, pois é feita uma operação em cima do saldo.
-- A classe __ContaPoupanca___, também trabalha em cima do saldo, porém com uma regra para efetuar o saque.
+- A classe __ContaPoupanca__, também trabalha em cima do saldo, porém com uma regra para efetuar o saque.
 - A classe __ContaFake__, criada para o exemplo, não pode ser uma substituta de sua classe base, pois acontece um comportamente inesperado: Uma execeção. Não é feita nenhuma implementação de retirada de dinheiro de lugar nenhum.
 
 Esse exemplo de *NotImplementedException();* é para deixar explícito que o comportamento é totalmente diferente, mas em exemplos reais, pode ser representado em métodos que retornam um tipo diferente do esperado.
